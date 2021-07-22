@@ -21,7 +21,7 @@ bspc config active_border_color "#8d7d91"
 bspc config presel_feedback_color "#201b21"
 
 bspc rule -a Emacs desktop='^4' follow=on focus=on
-bspc rule -a Brave desktop='^2' follow=on focus=on
+bspc rule -a Brave-browser desktop='^2' follow=on focus=on
 
 bspc rule -a Blueman-manager state=floating focus=on follow=on
 bspc rule -a kitty state=floating focus=on follow=on
