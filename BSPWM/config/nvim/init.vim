@@ -1,0 +1,1 @@
+/home/shubham/.config/nvim/init.vim
