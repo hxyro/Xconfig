@@ -1,7 +1,5 @@
 #! /bin/sh
 
-pgrep -x sxhkd > /dev/null || sxhkd -c ~/.config/bspwm/sxhkd/sxhkdrc &
-
 bspc monitor -d 'I' 'II' 'III' 'IV' 'V' 'VI' 'VII' 'VIII'
 
 bspc config border_width          1
@@ -18,6 +16,7 @@ bspc config gapless_monocle       true
 bspc config paddingless_monocle   true
 bspc config single_monocle        false
 bspc config focus_follows_pointer true
+
 bspc config pointer_modifier mod4
 bspc config pointer_action1 move
 bspc config pointer_action2 resize_side
@@ -31,36 +30,19 @@ bspc config presel_feedback_color     "#201b21"
 bspc config urgent_border_color       "#dd2727"
 
 
-bspc rule -a Emacs           desktop='^4'  state=fullscreen  follow=on
-bspc rule -a Brave-browser   desktop='^2'  state=floating    follow=on 
-bspc rule -a mpv             desktop='^7'  state=fullscreen  follow=on 
-bspc rule -a Firefox         desktop='^2'  state=floating    follow=on 
+bspc rule -a Emacs           desktop='^4'  state=fullscreen  follow=on   focus=on  manage=on
+bspc rule -a Brave-browser   desktop='^2'  state=floating    follow=on   focus=on  manage=on
+bspc rule -a Firefox         desktop='^2'  state=floating    follow=on   focus=on  manage=on
+bspc rule -a mpv             desktop='^7'  state=fullscreen  follow=on   focus=on  manage=on
+bspc rule -a feh             desktop='^7'  state=fullscreen  follow=on   focus=on  manage=on
+bspc rule -a Sxiv            desktop='^7'  state=fullscreen  follow=on   focus=on  manage=on
 
 
-bspc rule -a kitty           state=floating  focus=on  
-bspc rule -a Blueman-manager state=floating            sticky=on 
-bspc rule -a Pavucontrol     state=floating            sticky=on 
-bspc rule -a Pcmanfm         state=floating  focus=on  
-bspc rule -a feh             state=floating  focus=on  
-bspc rule -a Sxiv            state=floating  focus=on  
+bspc rule -a kitty           state=floating  focus=on  follow=on  manage=on
+bspc rule -a Blueman-manager state=floating  focus=on  follow=on  manage=on  sticky=on 
+bspc rule -a Pavucontrol     state=floating  focus=on  follow=on  manage=on  sticky=on 
+bspc rule -a Pcmanfm         state=floating  focus=on  follow=on  manage=on
 
 
-# Fix cursor
-xsetroot -cursor_name left_ptr
-
-#background
-#feh --bg-scale --no-fehbg --random $(xdg-user-dir)/.config/wallpaper/xwall  #xwall
-feh --bg-scale --no-fehbg --random $(xdg-user-dir)/.config/wallpaper/dark    #dark
-
-#polybar
-$HOME/.config/polybar/launch.sh
-
-#picom
-picom -f --experimental-backend
-
-# polkit agent
-killall -9 /usr/lib/xfce-polkit/xfce-polkit
-/usr/lib/xfce-polkit/xfce-polkit &
-
-#Notification Demon
-dunst &
+#startups
+exec ~/.config/bspwm/startups/startup.sh
