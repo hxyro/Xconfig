@@ -1,0 +1,54 @@
+window:
+  dimensions:
+    columns: 75
+    lines: 23
+  padding:
+    x: 10
+    y: 10
+  dynamic_padding: true
+  decorations: none
+scrolling:
+  history: 10000
+  multiplier: 15
+background_opacity: 0.15
+window.dynamic_title: false
+env:
+  WINIT_X11_SCALE_FACTOR: "1.0"
+font:
+  normal:
+    family: MesloLGS NF
+    style: SemiBold
+  bold:
+    family: JetBrains Mono
+  italic:
+    family: JetBrains Mono
+  offset:
+    x: 0
+    y: 0
+  size: 13
+colors:
+  primary:
+    background: "#ffffff"
+    foreground: "#ffffff"
+  normal:
+    black: "#000000"
+    red: "#ff5555"
+    green: "#50fa7b"
+    yellow: "#f1fa8c"
+    blue: "#caa9fa"
+    magenta: "#ff79c6"
+    cyan: "#8be9fd"
+    white: "#bfbfbf"
+  bright:
+    black: "#575b70"
+    red: "#ff6e67"
+    green: "#5af78e"
+    yellow: "#f4f99d"
+    blue: "#caa9fa"
+    magenta: "#ff92d0"
+    cyan: "#9aedfe"
+    white: "#e6e6e6"
+hide_cursor_when_typing: true
+cursor:
+  style: Beam
+  unfocused_hollow: true
