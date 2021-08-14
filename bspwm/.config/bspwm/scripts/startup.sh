@@ -27,3 +27,6 @@ nm-applet &
 
 #Bluetoothd
 blueman-applet &
+
+#Floating WM
+exec ~/.config/bspwm/scripts/floatingWM.sh

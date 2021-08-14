@@ -55,5 +55,3 @@ bspc rule -a Spacefm         state=floating  focus=on  follow=on  manage=on
 #startups
 exec ~/.config/bspwm/scripts/startup.sh
 
-#FloatingWM
-#exec ~/.config/bspwm/scripts/floatingWM.sh &
