@@ -22,13 +22,17 @@ super + Return
 
 # Floating-Terminal (kitty)
 shift + Return
-	tdrop -am -w 850 -h 500 -y 280 -x 520 -n 0 alacritty
+	tdrop -am -w 850 -h 500 -y 280 -x 520 -n 9 alacritty
 
 #Dropdown terminal
 shift + Down
-	tdrop -am -w 1920 -h 490 -y 0 -n 1 alacritty
+	tdrop -am -w 1920 -h 490 -y 0 -n 7 alacritty
 shift + Up
-	tdrop -am -w 1920 -h 535 -y 550 -n 2 alacritty
+	tdrop -am -w 1920 -h 535 -y 550 -n 5 alacritty
+shift + Left
+	tdrop -am -w 930 -h 1080 -y 0 -x 1000 -n 3 alacritty
+shift + Right
+	tdrop -am -w 930 -h 1080 -y 0 -x 0 -n 1 alacritty
 #--------------------------------------------------------------------------------------#
 
 #Browser(brave)
