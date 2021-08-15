@@ -29,4 +29,4 @@ nm-applet &
 blueman-applet &
 
 #Floating WM
-exec ~/.config/bspwm/scripts/floatingWM.sh
+#exec ~/.config/bspwm/scripts/floatingWM.sh
