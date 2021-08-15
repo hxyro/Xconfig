@@ -1,22 +1,29 @@
 #! /bin/sh
 
 #colors
-focused="$(cat ~/.config/bspwm/colors/colorsrc | head -n 1 | tail -n 1)"
-normal="$(cat ~/.config/bspwm/colors/colorsrc | head -n 2 | tail -n 1)"
-active="$(cat ~/.config/bspwm/colors/colorsrc | head -n 3 | tail -n 1)"
-presel="$(cat ~/.config/bspwm/colors/colorsrc | head -n 4 | tail -n 1)"
-urgent="$(cat ~/.config/bspwm/colors/colorsrc | head -n 5 | tail -n 1)"
-border="$(cat ~/.config/bspwm/colors/colorsrc | head -n 6 | tail -n 1)"
+focused="$(cat ~/.config/bspwm/misk/bin | head -n 4 | tail -n 1)"
+normal="$(cat ~/.config/bspwm/misk/bin | head -n 6 | tail -n 1)"
+active="$(cat ~/.config/bspwm/misk/bin | head -n 8 | tail -n 1)"
+presel="$(cat ~/.config/bspwm/misk/bin | head -n 10 | tail -n 1)"
+urgent="$(cat ~/.config/bspwm/misk/bin | head -n 12 | tail -n 1)"
+#gaping
+border_width="$(cat ~/.config/bspwm/misk/bin | head -n 15 | tail -n 1)"
+top_padding="$(cat ~/.config/bspwm/misk/bin | head -n 17 | tail -n 1)"
+bottom_padding="$(cat ~/.config/bspwm/misk/bin | head -n 19 | tail -n 1)"
+left_padding="$(cat ~/.config/bspwm/misk/bin | head -n 21 | tail -n 1)"
+right_padding="$(cat ~/.config/bspwm/misk/bin | head -n 23 | tail -n 1)"
+window_gap="$(cat ~/.config/bspwm/misk/bin | head -n 25 | tail -n 1)"
+split_ratio="$(cat ~/.config/bspwm/misk/bin | head -n 27 | tail -n 1)"
 
 bspc monitor -d 'I' 'II' 'III' 'IV' 'V' 'VI' 'VII' 'VIII'
 
-bspc config border_width          $border
-bspc config top_padding           35
-bspc config bottom_padding        12
-bspc config left_padding          10
-bspc config right_padding         10
-bspc config window_gap            24
-bspc config split_ratio           0.5
+bspc config border_width          $border_width
+bspc config top_padding           $top_padding
+bspc config bottom_padding        $bottom_padding
+bspc config left_padding          $left_padding
+bspc config right_padding         $right_padding
+bspc config window_gap            $window_gap
+bspc config split_ratio           $split_ratio
 
 
 bspc config borderless_monocle    true
