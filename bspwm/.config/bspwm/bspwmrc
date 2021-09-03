@@ -47,10 +47,11 @@ bspc config urgent_border_color       $urgent
 
 
 bspc rule -a Emacs           desktop='^1'  state=fullscreen    follow=on   focus=on  manage=on
-bspc rule -a Brave-browser   desktop='^2'  state=tiled         follow=on   focus=on  manage=on
+#bspc rule -a Brave-browser   desktop='^2'  state=tiled         follow=on   focus=on  manage=on
 bspc rule -a Firefox         desktop='^2'  state=tiled         follow=on   focus=on  manage=on
 bspc rule -a mpv             desktop='^5'  state=fullscreen    follow=on   focus=on  manage=on
-bspc rule -a feh             desktop='^5'  state=fullscreen    follow=on   focus=on  manage=on
+#bspc rule -a feh             desktop='^5'  state=fullscreen    follow=on   focus=on  manage=on
+bspc rule -a feh               state=floating    follow=on   focus=on  manage=on
 bspc rule -a Sxiv            desktop='^5'  state=fullscreen    follow=on   focus=on  manage=on
 
 
