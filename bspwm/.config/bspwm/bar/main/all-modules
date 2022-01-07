@@ -1,0 +1,304 @@
+;==============================================================================
+;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+;==============================================================================
+
+
+###########################||   BSPWM   ||###########################
+
+[module/bspwm]
+type = internal/bspwm
+pin-workspaces = true
+strip-wsnumbers = true
+index-sort = true
+enable-click = true
+enable-scroll = true
+wrapping-scroll = false
+reverse-scroll = true
+
+format = <label-state> <label-mode>
+format-font = 3
+label-focused = "  "
+label-focused-foreground = ${colors.white}
+label-focused-padding = 0
+
+label-occupied = "  "
+label-occupied-foreground = ${colors.amb4}
+label-occupied-padding = 0
+
+label-empty = "  "
+label-empty-foreground = ${colors.amb4}
+label-empty-padding = 0
+lable-active-font = 2
+
+
+##########################||   CPU   ||##########################
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-prefix = "  "
+format-prefix-font = 3
+label = %percentage:2%%
+label-font = 1
+format-foreground = ${colors.alx3}
+
+##########################||   MEMORY   ||##########################
+
+[module/memory]
+type = internal/memory
+interval = 2
+format-prefix = "  "
+format-prefix-font = 4
+label = %percentage_used%%
+label-font = 1
+format-foreground = ${colors.amb2}
+
+##########################||   TIME   ||###########################
+
+[module/date]
+type = internal/date
+interval = 5
+date =
+time = %l:%M%p
+label = "%time% "
+label-foreground = ${colors.amb4}
+
+##########################||   battery   ||##########################
+[module/battery]
+type = internal/battery
+full-at = 99
+battery = BAT1
+adapter = ACAD
+poll-interval = 10
+time-format = %H:%M
+
+format-charging = <animation-charging> <label-charging>
+format-charging-prefix = " "
+format-charging-prefix-font = 5
+format-charging-prefix-foreground = ${colors.green-b}
+format-discharging = <ramp-capacity> <label-discharging>
+
+label-charging = %percentage%%
+label-charging-foreground = ${colors.green-b}
+label-discharging = "%percentage%%"
+label-discharging-foreground = ${colors.white}
+
+format-full = <label-full>
+format-full-prefix = "  "
+format-full-prefix-font = 5
+format-full-prefix-foreground = ${colors.red-b}
+label-full = %percentage%%
+label-full-foreground = ${colors.red-b}
+
+ramp-capacity-0 = "  "
+ramp-capacity-0-foreground = ${colors.red-b}
+ramp-capacity-1 = "  "
+ramp-capacity-1-foreground = ${colors.orange-b}
+ramp-capacity-2 = "  "
+ramp-capacity-3 = "  "
+ramp-capacity-4 = "  "
+ramp-capacity-font = 5
+
+animation-charging-0 = "  "
+animation-charging-1 = "  "
+animation-charging-2 = "  "
+animation-charging-3 = "  "
+animation-charging-4 = "  "
+animation-charging-foreground = ${colors.green-b}
+animation-charging-font = 5
+animation-charging-framerate = 500
+
+#######################||   TEMPERATURE   ||#######################
+
+[module/temperature]
+type = internal/temperature
+thermal-zone = 0
+warn-temperature = 70
+
+format = <ramp> <label>
+format-warn = <ramp> <label-warn>
+
+label = %temperature-c%
+label-foreground = ${colors.amb5}
+
+label-warn = %temperature-c%
+label-warn-foreground = ${colors.red-b}
+
+ramp-0 = " "
+ramp-font = 3
+ramp-foreground = ${colors.orange-b}
+
+
+##########################||   ICONS   ||##########################
+[module/powermenu]
+type = custom/text
+content = "   "
+content-font = 2
+content-foreground = ${colors.arch}
+click-left = ~/.config/polybar/scripts
+
+[module/bluetooth]
+type = custom/text
+content = "   "
+content-font = 5
+content-foreground = ${colors.blue}
+click-left = ~/.config/polybar/scripts/bluetooth/blueman.sh
+click-middle = ~/.config/polybar/scripts/bluetooth/blueman-off.sh
+
+[module/audio-controls]
+type = custom/text
+content = "  "
+content-font = 4
+content-foreground = ${colors.amb}
+click-left = ~/.config/polybar/scripts/audio-controls/audio.sh
+click-middle = ~/.config/polybar/scripts/audio-controls/audio-off.sh
+
+[module/console]
+type = custom/text
+content = "  "
+content-font = 4
+content-foreground = ${colors.amb2}
+click-left = ~/.config/polybar/scripts/console/kitty.sh
+click-middle = ~/.config/polybar/scripts/console/kitty-off.sh
+
+[module/firefox]
+type = custom/text
+content = "  "
+content-font = 3
+content-foreground = ${colors.alx1}
+click-left = ~/.config/polybar/scripts/firefox/firefox.sh
+
+[module/blender]
+type = custom/text
+content = "  "
+content-font = 3
+content-foreground = ${colors.alx2}
+click-left = 
+
+[module/file]
+type = custom/text
+content = "  "
+content-font = 3
+content-foreground = ${colors.alx3}
+click-left = ~/.config/polybar/scripts/file/pcmanfm.sh 
+click-middle = ~/.config/polybar/scripts/file/pcmanfm-off.sh 
+
+[module/dropbox]
+type = custom/text
+content = "  "
+content-font = 3
+content-foreground = ${colors.alx4}
+click-left = 
+
+[module/brave]
+type = custom/text
+content = "  "
+content-font = 3
+content-foreground = ${colors.alx5}
+click-left = ~/.config/polybar/scripts/brave/brave.sh
+click-middle = ~/.config/polybar/scripts/brave/brave-off.sh
+
+[module/vscode]
+type = custom/text
+content = "  "
+content-font = 3
+content-foreground = ${colors.alx6}
+click-left = 
+
+[module/lock]
+type = custom/text
+content = " "
+content-font = 3
+content-foreground = ${colors.alx7}
+click-left = ~/.config/polybar/scripts/lock/lock.sh
+
+[module/screenshot]
+type = custom/text
+content = "  "
+content-font = 3
+content-foreground = ${colors.amb5}
+click-left = ~/.config/polybar/scripts/screenshot/ss-full.sh
+click-right = ~/.config/polybar/scripts/screenshot/ss-selection.sh
+
+[module/ffmpeg0]
+type = custom/script
+exec = pgrep -x ffmpeg
+interval = 25
+format-foreground = ${colors.red-b}
+format-prefix = " 雷 "
+format-prefix-font = 3
+
+ [module/ffmpeg]
+type = custom/text
+content = "  "
+content-font = 3
+content-foreground = ${colors.amb5}
+click-left = ~/.config/polybar/scripts/ffmpeg/ffmpeg.sh
+click-middle = ~/.config/polybar/scripts/ffmpeg/ffmpeg-off.sh
+##################################################################
+
+
+[module/alsa]
+type = internal/alsa
+
+format-volume = <ramp-volume> <label-volume>
+format-muted = <label-muted>
+format-muted-prefix = 婢
+format-muted-prefix-font = 3
+format-muted-foreground = ${colors.red-b}
+label-volume = %percentage%%
+label-volume-foreground = ${colors.purple-b}
+label-muted = " Mute"
+
+ramp-volume-0 = 奄
+ramp-volume-1 = 奄
+ramp-volume-2 = 奄
+ramp-volume-3 = 奔
+ramp-volume-4 = 奔
+ramp-volume-5 = 奔
+ramp-volume-6 = 墳
+ramp-volume-7 = 墳
+ramp-volume-8 = 墳
+ramp-volume-9 = 墳
+ramp-volume-foreground = ${colors.purple-b}
+ramp-volume-font = 3
+
+ramp-headphones-0 = 
+ramp-headphones-1 = 
+
+[module/cpu-graph]
+type = internal/cpu
+interval = 0.1
+;format = " <ramp-coreload>"
+format = " <ramp-coreload>"
+format-margin = 1
+ramp-coreload-0 = █ 
+ramp-coreload-0-foreground = ${colors.amb1}
+ramp-coreload-1 = ▁ 
+ramp-coreload-1-foreground = ${colors.amb1}
+ramp-coreload-2 = ▂ 
+ramp-coreload-2-foreground = ${colors.amb2}
+ramp-coreload-3 = ▃ 
+ramp-coreload-3-foreground = ${colors.amb3}
+ramp-coreload-4 = ▄ 
+ramp-coreload-4-foreground = ${colors.amb4}
+ramp-coreload-5 = ▅ 
+ramp-coreload-5-foreground = ${colors.amb5}
+ramp-coreload-6 = ▆ 
+ramp-coreload-6-foreground = ${colors.amb1}
+ramp-coreload-7 = ▇ 
+ramp-coreload-7-foreground = ${colors.amb3}
+ramp-coreload-8 = █ 
+ramp-coreload-8-foreground = ${colors.amb4}
+ramp-coreload-font = 2
+format-background = ${colors.background}
+format-foreground = ${colors.foreground}
+format-underline = ${colors.foreground-alt}
+format-padding = 

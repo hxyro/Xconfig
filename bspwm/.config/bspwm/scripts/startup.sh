@@ -11,10 +11,10 @@ xsetroot -cursor_name left_ptr
 sh ~/.config/bspwm/scripts/wallpaper.sh &
 
 #polybar
-sh ~/.config/polybar/launch/launch.sh &
+sh ~/.config/bspwm/bar/launch.sh &
 
 #picom
-picom -f -b --experimental-backend &
+picom --experimental-backend &
 
 # polkit agent
 /usr/lib/xfce-polkit/xfce-polkit &
@@ -26,7 +26,7 @@ dunst --config ~/.config/dunst/dunstrc &
 nm-applet &
 
 #Bluetoothd
-blueman-applet &
+#blueman-applet &
 
 #Floating WM
 #exec ~/.config/bspwm/scripts/floatingWM.sh
