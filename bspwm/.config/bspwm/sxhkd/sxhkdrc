@@ -16,11 +16,11 @@ super + d
 
 #-------------------------------------------------------------------------------------#
 
-# Terminal (alacritty)
+# Terminal (alacritty,kitty)
 super + Return
-    alacritty
+    kitty
 
-# Floating-Terminal (kitty)
+# Floating-Terminal (alacritty,kitty)
 shift + ctrl + Return
 	tdrop -am -w 850 -h 500 -y 280 -x 520 -n 9 alacritty
 
@@ -38,15 +38,17 @@ shift + ctrl + Left
 #Browser(brave)
 super + F2
 	brave
-#super + n
-#	firefox
+super + F3
+    google-chrome-stable
+
+
 
 #--------------------------------------------------------------------------------------#
 
 #Devices/Controler
-ctrl + shift + F1
-	blueman-manager
-ctrl + shift + F2
+super + F11
+	blueberry
+super + F12
     pavucontrol
 #--------------------------------------------------------------------------------------#
 
@@ -57,6 +59,8 @@ super + F1
 #--------------------------------------------------------------------------------------#
 
 #rofi
+XF86Search
+    rofi -show combi -modi combi
 
 #--------------------------------------------------------------------------------------#
 
@@ -93,21 +97,21 @@ ctrl + 0
 ctrl + 9
 	light -U 2
 
-XF86MonBrightness{Up,Down}
-        backlight{-up,-down}
+XF86MonBrightnessUp
+	light -A 2
+XF86MonBrightnessDown
+	light -U 2
 
 #-------------------------------------------------------------------------------------#
 
-# Volume control
-XF86Audio{RaiseVolume,LowerVolume}
-        volume{-up,-down}
+# Volume control(pipewire)
 
-shift + {Up,Down}
-        volume{-up,-down}
-
+XF86AudioLowerVolume
+    pactl set-sink-volume @DEFAULT_SINK@ -5%
+XF86AudioRaiseVolume
+    pactl set-sink-volume @DEFAULT_SINK@ +5%
 XF86AudioMute
-        amixer set Master toggle
-
+    pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 #-------------------------------------------------------------------------------------#
 
@@ -120,8 +124,10 @@ XF86Audio{Next,Prev,Play,Stop}
 #Screenshots
 super + shift + s
 	maim --select | tee $(xdg-user-dir)/Pictures/screenshot/selection/$(date +%s).png | xclip -selection clipboard -t image/png && notify-send " $(date +%s) copied to clipboard!"
-super + alt + s
+super + alt + x
     shutdown now
+super + ctrl + x
+    reboot
 
 #-------------------------------------------------------------------------------------#
 

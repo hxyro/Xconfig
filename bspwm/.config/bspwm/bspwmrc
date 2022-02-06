@@ -36,7 +36,7 @@ bspc rule -a mpv             desktop='^5'  state=fullscreen    follow=on   focus
 bspc rule -a Sxiv            desktop='^5'  state=fullscreen    follow=on   focus=on  manage=on
 
 
-bspc rule -a kitty           state=floating  focus=on  follow=on  manage=on
+bspc rule -a Blueberry.py    state=floating  focus=on  follow=on  manage=on  sticky=on
 bspc rule -a Blueman-manager state=floating  focus=on  follow=on  manage=on  sticky=on 
 bspc rule -a Pavucontrol     state=floating  focus=on  follow=on  manage=on  sticky=on 
 bspc rule -a Spacefm         state=floating  focus=on  follow=on  manage=on

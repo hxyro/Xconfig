@@ -30,3 +30,4 @@ nm-applet &
 
 #Floating WM
 #exec ~/.config/bspwm/scripts/floatingWM.sh
+killall imwheel; sleep 0.1; imwheel &
