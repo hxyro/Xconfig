@@ -18,7 +18,7 @@ super + d
 
 # Terminal (alacritty,kitty)
 super + Return
-    kitty
+    alacritty
 
 # Floating-Terminal (alacritty,kitty)
 shift + ctrl + Return
@@ -26,13 +26,13 @@ shift + ctrl + Return
 
 #Dropdown terminal
 shift + ctrl + Up
-	tdrop -am -w 1920 -h 490 -y 0 -n 7 alacritty
+	tdrop -am -w 1920 -h 490 -y 0 -n 7 alacritty --config-file ~/.config/alacritty/dropdown.yml
 shift + ctrl + Down
-	tdrop -am -w 1920 -h 535 -y 550 -n 5 alacritty
+	tdrop -am -w 1920 -h 535 -y 550 -n 5 alacritty --config-file ~/.config/alacritty/dropdown.yml
 shift + ctrl + Right
-	tdrop -am -w 930 -h 1080 -y 0 -x 1000 -n 3 alacritty
+	bspc rule -a Brave-browser layer=normal && tdrop -am -w 930 -h 1080 -y 0 -x 1000 -n 3 brave
 shift + ctrl + Left
-	tdrop -am -w 930 -h 1080 -y 0 -x 0 -n 1 alacritty
+	tdrop -am -w 930 -h 1080 -y 0 -x 0 -n 1 firefox https://www.youtube.com/
 #--------------------------------------------------------------------------------------#
 
 #Browser(brave)
@@ -40,8 +40,6 @@ super + F2
 	brave
 super + F3
     google-chrome-stable
-
-
 
 #--------------------------------------------------------------------------------------#
 
@@ -62,6 +60,12 @@ super + F1
 XF86Search
     rofi -show combi -modi combi
 
+#--------------------------------------------------------------------------------------#
+
+#polybar
+#hide
+F1
+	polybar-msg cmd toggle
 #--------------------------------------------------------------------------------------#
 
 #Emacs
@@ -123,7 +127,7 @@ XF86Audio{Next,Prev,Play,Stop}
 
 #Screenshots
 super + shift + s
-	maim --select | tee $(xdg-user-dir)/Pictures/screenshot/selection/$(date +%s).png | xclip -selection clipboard -t image/png && notify-send " $(date +%s) copied to clipboard!"
+	maim --select | tee ~/Pictures/screenshot/selection/$(date +%s).png | xclip -selection clipboard -t image/png && notify-send " $(date +%s) copied to clipboard!"
 super + alt + x
     shutdown now
 super + ctrl + x
