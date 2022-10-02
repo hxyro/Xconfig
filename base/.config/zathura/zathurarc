@@ -7,7 +7,9 @@ map J zoom out
 map K zoom in
 map R rotate
 unmap f
+unmap m
 map f toggle_fullscreen
+map m toggle_recolor
 map [fullscreen] f toggle_fullscreen
 
 # Open document in fit-width mode by default
@@ -26,14 +28,15 @@ set zoom-min 10
 set guioptions ""
 
 set font "Meslo LG S DZ"
+set font-size 20
 
 # zathurarc-dark
 set notification-error-bg       "#E06B74" 
 set notification-error-fg       "#EA757E" 
 set notification-warning-bg     "#E5C07A"
 set notification-warning-fg     "#EFCA84"
-set notification-bg             "#98C379"
-set notification-fg             "#A2CD83"
+set notification-bg             "#333333"
+set notification-fg             "#aaaaaa"
 
 set completion-group-bg         "#12161D"
 set completion-group-fg         "#FE96B7"
@@ -50,7 +53,7 @@ set index-active-fg             "#55B6C2" # base2
 set inputbar-bg                 "#12161D"
 set inputbar-fg                 "#D282E7" # base2
 
-set statusbar-bg                "#12161D" # base02
+set statusbar-bg                "#ffffff" # base02
 set statusbar-fg                "#D282E7" # base1
 
 set highlight-color             "#FE96B7" # base00  # hightlight match when search keyword(vim's /)
@@ -63,7 +66,7 @@ set render-loading-fg           "#cbd2df" # base02
 set render-loading-bg           "#202630" # base02
 
 # Recolor book content's color
-set recolor                     true
+set recolor                     false
 set recolor-lightcolor          "#202630" # base02
 set recolor-darkcolor           "#cbd2df" # base1
 set recolor-keephue             true      # keep original color

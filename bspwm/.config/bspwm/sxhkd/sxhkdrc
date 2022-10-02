@@ -21,8 +21,8 @@ super + Return
     alacritty
 
 # Floating-Terminal (alacritty,kitty)
-shift + ctrl + Return
-	tdrop -am -w 850 -h 500 -y 280 -x 520 -n 9 alacritty
+ctrl + Return
+  wmctrl -x -a "tabbed" || tabbed alacritty --embed
 
 #Dropdown terminal
 shift + ctrl + Up
@@ -30,9 +30,9 @@ shift + ctrl + Up
 shift + ctrl + Down
 	tdrop -am -w 1920 -h 535 -y 550 -n 5 alacritty --config-file ~/.config/alacritty/dropdown.yml
 shift + ctrl + Right
-	bspc rule -a Brave-browser layer=normal && tdrop -am -w 930 -h 1080 -y 0 -x 1000 -n 3 brave
+  tdrop -am -w 930 -h 1080 -y 0 -x 1000 -n 1 alacritty --config-file ~/.config/alacritty/dropdown.yml
 shift + ctrl + Left
-	tdrop -am -w 930 -h 1080 -y 0 -x 0 -n 1 firefox https://www.youtube.com/
+	tdrop -am -w 930 -h 1080 -y 0 -x 0 -n 2 alacritty --config-file ~/.config/alacritty/dropdown.yml
 #--------------------------------------------------------------------------------------#
 
 #Browser(brave)

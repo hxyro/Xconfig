@@ -7,7 +7,7 @@
 
 ## Import files (Colors, Fonts, Etc)
 import:
-  - ~/.config/alacritty/colors.yml
+  - ~/.config/alacritty/colors.d.yml
   - ~/.config/alacritty/fonts.yml
 
 ## Set environment variables
@@ -17,7 +17,7 @@ env:
 
 ## Terminal window settings
 window:
-  opacity: 0
+  opacity: 0.4
   dimensions:
     columns: 82
     lines: 25

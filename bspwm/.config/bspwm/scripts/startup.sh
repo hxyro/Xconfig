@@ -14,8 +14,7 @@ sh ~/.config/bspwm/scripts/wallpaper.sh &
 sh ~/.config/bspwm/bar/launch.sh &
 
 #picom
-picom --backend glx --glx-fshader-win "$(cat ~/.config/picom/grayscale.glsl)"
-
+picom --experimental-backend 
 # polkit agent
 /usr/lib/xfce-polkit/xfce-polkit &
 
